@@ -1,0 +1,6 @@
+**.pyc
+/venv
+**/logs
+**/output
+.env
+insta_cookies.pkl

@@ -1,0 +1,459 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dineug/erd-editor/main/json-schema/schema.json",
+  "version": "3.0.0",
+  "settings": {
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": 0,
+    "scrollLeft": -15.12,
+    "zoomLevel": 1,
+    "show": 431,
+    "database": 4,
+    "databaseName": "",
+    "canvasType": "ERD",
+    "language": 1,
+    "tableNameCase": 4,
+    "columnNameCase": 2,
+    "bracketType": 1,
+    "relationshipDataTypeSync": true,
+    "relationshipOptimization": false,
+    "columnOrder": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "maxWidthComment": -1,
+    "ignoreSaveSettings": 0
+  },
+  "doc": {
+    "tableIds": [
+      "e35fa601480f4541bb9e01",
+      "289ee348a19a4d4abda340"
+    ],
+    "relationshipIds": [
+      "nu1fdVoaYzl_zMchGMD35"
+    ],
+    "indexIds": [],
+    "memoIds": []
+  },
+  "collections": {
+    "tableEntities": {
+      "e35fa601480f4541bb9e01": {
+        "id": "e35fa601480f4541bb9e01",
+        "name": "searchtxt",
+        "comment": "검색어 테이블",
+        "columnIds": [
+          "e99c7eb7974c48058aeae4",
+          "fdb3eb1815b04537981cc4",
+          "e771542f0ff049739db49c"
+        ],
+        "seqColumnIds": [
+          "e99c7eb7974c48058aeae4",
+          "fdb3eb1815b04537981cc4",
+          "e771542f0ff049739db49c"
+        ],
+        "ui": {
+          "x": 230,
+          "y": 208,
+          "zIndex": 1,
+          "widthName": 60,
+          "widthComment": 77,
+          "color": ""
+        },
+        "meta": {
+          "updateAt": 1752668655415,
+          "createAt": 1752668158727
+        }
+      },
+      "289ee348a19a4d4abda340": {
+        "id": "289ee348a19a4d4abda340",
+        "name": "insta_posts",
+        "comment": "인스타그램 게시물",
+        "columnIds": [
+          "3b0487629c234f08ac2e4f",
+          "fJueTkWF1BumdX0vlOQNa",
+          "349499e699ab4471933661",
+          "3a16c949955845468fa8ce",
+          "8f9e08fb7e684007857079",
+          "5a3e65a5960540a1b3a29b",
+          "b8c39529e2fa476c8aaa25",
+          "db08c4ea60f4474c89249b",
+          "fed8342d58fa4164bc3a83",
+          "00a16aeb8d2942c898e527"
+        ],
+        "seqColumnIds": [
+          "3b0487629c234f08ac2e4f",
+          "fJueTkWF1BumdX0vlOQNa",
+          "96d621b04715496dad9f39",
+          "349499e699ab4471933661",
+          "3a16c949955845468fa8ce",
+          "8f9e08fb7e684007857079",
+          "5a3e65a5960540a1b3a29b",
+          "b8c39529e2fa476c8aaa25",
+          "db08c4ea60f4474c89249b",
+          "fed8342d58fa4164bc3a83",
+          "00a16aeb8d2942c898e527"
+        ],
+        "ui": {
+          "x": 976,
+          "y": 134,
+          "zIndex": 2,
+          "widthName": 60,
+          "widthComment": 101,
+          "color": ""
+        },
+        "meta": {
+          "updateAt": 1752668684574,
+          "createAt": 1752668158727
+        }
+      }
+    },
+    "tableColumnEntities": {
+      "e99c7eb7974c48058aeae4": {
+        "id": "e99c7eb7974c48058aeae4",
+        "tableId": "e35fa601480f4541bb9e01",
+        "name": "id",
+        "comment": "검색어 ID",
+        "dataType": "INT",
+        "default": "AUTO_INCREMENT",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 102
+        },
+        "meta": {
+          "updateAt": 1752668158727,
+          "createAt": 1752668158727
+        }
+      },
+      "fdb3eb1815b04537981cc4": {
+        "id": "fdb3eb1815b04537981cc4",
+        "tableId": "e35fa601480f4541bb9e01",
+        "name": "text",
+        "comment": "검색어 텍스트",
+        "dataType": "VARCHAR(100)",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 77,
+          "widthDataType": 81,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1752668158727,
+          "createAt": 1752668158727
+        }
+      },
+      "e771542f0ff049739db49c": {
+        "id": "e771542f0ff049739db49c",
+        "tableId": "e35fa601480f4541bb9e01",
+        "name": "created_at",
+        "comment": "생성 시간",
+        "dataType": "DATETIME",
+        "default": "CURRENT_TIMESTAMP",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 122
+        },
+        "meta": {
+          "updateAt": 1752668158727,
+          "createAt": 1752668158727
+        }
+      },
+      "3b0487629c234f08ac2e4f": {
+        "id": "3b0487629c234f08ac2e4f",
+        "tableId": "289ee348a19a4d4abda340",
+        "name": "id",
+        "comment": "게시물 ID",
+        "dataType": "INT",
+        "default": "AUTO_INCREMENT",
+        "options": 10,
+        "ui": {
+          "keys": 1,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 102
+        },
+        "meta": {
+          "updateAt": 1752668158727,
+          "createAt": 1752668158727
+        }
+      },
+      "96d621b04715496dad9f39": {
+        "id": "96d621b04715496dad9f39",
+        "tableId": "289ee348a19a4d4abda340",
+        "name": "searchtxt_id",
+        "comment": "연결된 검색어 ID",
+        "dataType": "INT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 65,
+          "widthComment": 92,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1752668158727,
+          "createAt": 1752668158727
+        }
+      },
+      "349499e699ab4471933661": {
+        "id": "349499e699ab4471933661",
+        "tableId": "289ee348a19a4d4abda340",
+        "name": "user_id",
+        "comment": "인스타그램 사용자 ID",
+        "dataType": "VARCHAR(100)",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 116,
+          "widthDataType": 81,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1752668158727,
+          "createAt": 1752668158727
+        }
+      },
+      "3a16c949955845468fa8ce": {
+        "id": "3a16c949955845468fa8ce",
+        "tableId": "289ee348a19a4d4abda340",
+        "name": "content",
+        "comment": "게시물 본문",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 65,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1752668158727,
+          "createAt": 1752668158727
+        }
+      },
+      "8f9e08fb7e684007857079": {
+        "id": "8f9e08fb7e684007857079",
+        "tableId": "289ee348a19a4d4abda340",
+        "name": "post_time",
+        "comment": "게시물 작성 시간",
+        "dataType": "DATETIME",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 93,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1752668158727,
+          "createAt": 1752668158727
+        }
+      },
+      "5a3e65a5960540a1b3a29b": {
+        "id": "5a3e65a5960540a1b3a29b",
+        "tableId": "289ee348a19a4d4abda340",
+        "name": "like",
+        "comment": "좋아요 수",
+        "dataType": "INT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 60,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1752668158727,
+          "createAt": 1752668158727
+        }
+      },
+      "b8c39529e2fa476c8aaa25": {
+        "id": "b8c39529e2fa476c8aaa25",
+        "tableId": "289ee348a19a4d4abda340",
+        "name": "url",
+        "comment": "게시물 URL",
+        "dataType": "VARCHAR(255)",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 62,
+          "widthDataType": 81,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1752668158727,
+          "createAt": 1752668158727
+        }
+      },
+      "db08c4ea60f4474c89249b": {
+        "id": "db08c4ea60f4474c89249b",
+        "tableId": "289ee348a19a4d4abda340",
+        "name": "hashtags",
+        "comment": "해시태그 목록",
+        "dataType": "TEXT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 77,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1752668158727,
+          "createAt": 1752668158727
+        }
+      },
+      "fed8342d58fa4164bc3a83": {
+        "id": "fed8342d58fa4164bc3a83",
+        "tableId": "289ee348a19a4d4abda340",
+        "name": "hashtag_count",
+        "comment": "해시태그 개수",
+        "dataType": "INT",
+        "default": "",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 79,
+          "widthComment": 77,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1752668158727,
+          "createAt": 1752668158727
+        }
+      },
+      "00a16aeb8d2942c898e527": {
+        "id": "00a16aeb8d2942c898e527",
+        "tableId": "289ee348a19a4d4abda340",
+        "name": "crawl_time",
+        "comment": "크롤링 시점",
+        "dataType": "DATETIME",
+        "default": "CURRENT_TIMESTAMP",
+        "options": 0,
+        "ui": {
+          "keys": 0,
+          "widthName": 60,
+          "widthComment": 65,
+          "widthDataType": 60,
+          "widthDefault": 122
+        },
+        "meta": {
+          "updateAt": 1752668158727,
+          "createAt": 1752668158727
+        }
+      },
+      "fJueTkWF1BumdX0vlOQNa": {
+        "id": "fJueTkWF1BumdX0vlOQNa",
+        "tableId": "289ee348a19a4d4abda340",
+        "name": "searchtxt_id",
+        "comment": "연결된 검색어 ID",
+        "dataType": "INT",
+        "default": "",
+        "options": 8,
+        "ui": {
+          "keys": 2,
+          "widthName": 65,
+          "widthComment": 92,
+          "widthDataType": 60,
+          "widthDefault": 60
+        },
+        "meta": {
+          "updateAt": 1752668686069,
+          "createAt": 1752668662586
+        }
+      }
+    },
+    "relationshipEntities": {
+      "rel1": {
+        "id": "rel1",
+        "identification": false,
+        "relationshipType": 4,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "289ee348a19a4d4abda340",
+          "columnIds": [
+            "96d621b04715496dad9f39"
+          ],
+          "x": 0,
+          "y": 0,
+          "direction": 8
+        },
+        "end": {
+          "tableId": "e35fa601480f4541bb9e01",
+          "columnIds": [
+            "e99c7eb7974c48058aeae4"
+          ],
+          "x": 0,
+          "y": 0,
+          "direction": 8
+        },
+        "meta": {
+          "updateAt": 1752668158727,
+          "createAt": 1752668158727
+        }
+      },
+      "nu1fdVoaYzl_zMchGMD35": {
+        "id": "nu1fdVoaYzl_zMchGMD35",
+        "identification": false,
+        "relationshipType": 16,
+        "startRelationshipType": 2,
+        "start": {
+          "tableId": "e35fa601480f4541bb9e01",
+          "columnIds": [
+            "e99c7eb7974c48058aeae4"
+          ],
+          "x": 695,
+          "y": 272,
+          "direction": 2
+        },
+        "end": {
+          "tableId": "289ee348a19a4d4abda340",
+          "columnIds": [
+            "fJueTkWF1BumdX0vlOQNa"
+          ],
+          "x": 976,
+          "y": 282,
+          "direction": 1
+        },
+        "meta": {
+          "updateAt": 1752668662587,
+          "createAt": 1752668662587
+        }
+      }
+    },
+    "indexEntities": {},
+    "indexColumnEntities": {},
+    "memoEntities": {}
+  }
+}

@@ -1,0 +1,7 @@
+selenium==4.34.2
+webdriver-manager==4.0.2
+python-dotenv==1.1.1
+SQLAlchemy==2.0.41
+PyMySQL==1.1.1
+requests==2.32.4
+pandas==2.3.1
