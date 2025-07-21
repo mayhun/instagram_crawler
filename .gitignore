@@ -4,3 +4,5 @@
 **/output
 .env
 insta_cookies.pkl
+**.ipynb
+.gitignore
