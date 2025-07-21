@@ -16,6 +16,7 @@ from db import SessionLocal
 from sqlalchemy.orm import Session
 from models import SearchTxt, InstaPost
 from datetime import datetime
+from redis_client import redis_client
 
 
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36'
@@ -89,13 +90,23 @@ class InstaCrawler:
         self.driver.get(search_url)
         sleep(5)
 
-    def search_url(self, db: Session, url:str) -> bool:
-        search = db.query(InstaPost).filter_by(url=url).first()
-        if search:
-            return True
-        else:
-            return False
+    def get_url_key(self, url: str) -> str:
+        '''
+        URL -> Redis Key 변환'''
+        return f"insta:visited:{url}"
 
+    def is_duplicate_url(self, url: str) -> bool:
+        '''
+        중복 확인
+        '''
+        key = self.get_url_key(url)
+        return redis_client.exists(key)
+
+    def mark_url_as_visited(self, url: str):
+        '''
+        Redis 저장 (TTL 7일)'''
+        key = self.get_url_key(url)
+        redis_client.set(key, 1, ex=60 * 60 * 24 * 7)
 
     def crawl_posts(self, searchtxt_id):
         '''
@@ -106,6 +117,7 @@ class InstaCrawler:
         first_post = wait.until(EC.presence_of_element_located((By.CLASS_NAME, '_aagu'))) # 첫번째 게시물이 로드될때 까지 대기
         first_post.click()
         duplication_cnt = 0 # 중복 게시물
+        time.sleep(2) # 첫 게시물의 user_id를 못가져오는 경우 때문에 2초 정지
         while check_point:
             
             # user id 수집
@@ -181,16 +193,21 @@ class InstaCrawler:
                     crawl_time = crawl_time
                 )
                 
-                # DB 중복 확인
-                with SessionLocal() as db:
-                    in_db = self.search_url(db, current_url)
+                # Redis 중복 확인
+                duplication_tt = time.time()
+                in_db = self.is_duplicate_url(current_url)
+                self.logger.info(f'[+] 게시물 중복 확인 시간 {time.time() - duplication_tt}')
+
                 if not in_db:
                     self.db_buffer.append(post)
+                    self.mark_url_as_visited(current_url)
                 else:
                     self.logger.info(f'중복 게시물 => user_id: {user_id}, url: {current_url}')
-                    duplication_cnt +=1
-                if duplication_cnt > 10:
-                    check_point = False
+                    duplication_cnt += 1
+                
+                    if duplication_cnt > 10:
+                        self.logger.info(f'[!] 중복 게시물 {duplication_cnt}개 초과, 크롤링 중단')
+                        check_point = False
 
                 # 100개 단위로 db 저장
                 if len(self.db_buffer) >= 100:
